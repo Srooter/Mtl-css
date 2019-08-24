@@ -2,6 +2,7 @@ Mtl.css
 
 A simple css tool lib.
 
+![GitHub](https://img.shields.io/github/license/Srooter/Mtl.css)
 
 ## Features
 

@@ -1,0 +1,47 @@
+@import '../utils/variables.scss';
+
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.spac {
+  letter-spacing: normal;
+}
+.underline {
+  text-decoration: underline;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-ellipsis {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-multi-ellipsis {
+  width: $multi-ellipsis-width;
+  height: $multi-ellipsis-heigh;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $multi-ellipsis-line;
+  overflow: hidden;
+}
+
+.text-break {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}

@@ -1,0 +1,29 @@
+@import '../utils/variables.scss';
+
+// text color
+.red {
+  color: $red;
+}
+.white {
+  color: $white;
+}
+.black {
+  color: $black;
+}
+.grey {
+  color: $grey;
+}
+
+// background color
+.bg-red {
+  background-color: $red;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-grey {
+  background-color: $grey;
+}

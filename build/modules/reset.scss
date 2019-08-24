@@ -1,0 +1,104 @@
+@import '../utils/variables.scss';
+
+*,
+*::before,
+*::after {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: 1.15;
+  word-spacing: normal;
+  color: $text-font;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+[hidden] {
+  display: none;
+}
+html {
+  @if $platform == mobile {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+html,
+body {
+  @if $platform == mobile {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  @if $platform == mobile {
+    display: none;
+  }
+}
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+select,
+textarea,
+input,
+button {
+  border: 0;
+  outline: none;
+  font-family: inherit;
+  font-size: 100%;
+}
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+  &:active,
+  &:hover {
+    text-decoration: none;
+    outline: 0;
+  }
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+img {
+  width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+table {
+  border-collapse: collapse;
+}
+svg:not(:root) {
+  overflow: hidden;
+}

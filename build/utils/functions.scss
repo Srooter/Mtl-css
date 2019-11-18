@@ -67,3 +67,10 @@
   @include fixed;
   bottom: 0;
 }
+
+// transition glint
+.transition-glint{
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}

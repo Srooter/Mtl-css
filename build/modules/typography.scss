@@ -22,7 +22,21 @@
   text-align: center;
 }
 .text-justify {
-  text-align: justify !important;
+  text-align: justify;
+  text-align-last: justify;
+  -moz-text-align-last: justify;
+  -webkit-text-align-last: justify;
+}
+
+.text-nowrap {
+  white-space:nowrap;
+}
+.text-wrap {
+  word-break:break-all;
+}
+.text-auto {
+  word-wrap: break-word;
+  word-break: normal;
 }
 
 .text-ellipsis {

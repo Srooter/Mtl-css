@@ -18,17 +18,17 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions
 ## Usage
 
 1.congfig reset platform.
-`build/utils/variables.scss`
+`src/utils/variables.scss`
 // @param "pc","mobile"
 \$platform: mobile;
 
 2. `npm install node-sass -g`
 
-3. `node-sass build/main.scss --output-style compressed dist/mtl.min.css`
+3. `node-sass src/main.scss --output-style compressed dist/mtl.min.css`
 
 4. `<link rel="stylesheet" href="mtl.min.css"/>`
 
-PS: class name description see `build/*.scss` file.
+PS: class name description see `src/*.scss` file.
 
 ## Reference
 

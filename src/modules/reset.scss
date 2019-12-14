@@ -36,7 +36,13 @@ body {
     -webkit-tap-highlight-color: transparent;
   }
 }
-
+input:disabled{
+  @if $platform == mobile {
+    color:$grey;
+    opacity: 1;
+    -webkit-text-fill-color: $grey;
+  }
+}
 input[type='search']::-webkit-search-cancel-button {
   @if $platform == mobile {
     display: none;

@@ -1,6 +1,6 @@
 Mtl.css
 
-English|[中文](README-zh.md)
+English | [中文](README-zh.md)
 
 A simple css tool lib.
 

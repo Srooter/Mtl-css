@@ -1,6 +1,6 @@
 Mtl.css
 
-中文|[English](README.md)
+中文 | [English](README.md)
 
 一个简单的css工具库。
 

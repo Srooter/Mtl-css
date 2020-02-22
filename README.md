@@ -21,9 +21,9 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions
 
 1. congfig reset platform. In the `src/utils/variables.scss` file
 
-2. `npm install node-sass -g`
+2. Run Npm Command `npm install node-sass -g`
 
-3. `node-sass src/main.scss --output-style compressed dist/mtl.min.css` dist `mtl.min.css` file.
+3. Npm Command `node-sass src/main.scss --output-style compressed dist/mtl.min.css` output `mtl.min.css` file.
 
 PS: class name description see `src/*.scss` file.
 

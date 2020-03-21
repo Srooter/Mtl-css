@@ -1,8 +1,15 @@
-@import './variables.scss';
+@import "./variables.scss";
+
+@mixin shadow($color) {
+  -webkit-box-shadow: 6px 6px 40px -2px  $color;
+  -moz-box-shadow: 6px 6px 40px -2px  $color;
+  box-shadow: 6px 6px 40px -2px  $color;
+}
 
 @mixin rounded-corners-4px {
   border-radius: 4px;
 }
+
 @mixin fixed {
   position: fixed;
   z-index: 1000;

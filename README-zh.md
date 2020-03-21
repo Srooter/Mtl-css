@@ -21,9 +21,9 @@ Mtl.css
 
 1. 配置需要重置的平台，在`src/utils/variables.scss`文件，设置`$platform`值。
 
-2. `npm install node-sass -g`
+2. 运行Npm命令 `npm install node-sass -g`
 
-3. `node-sass src/main.scss --output-style compressed dist/mtl.min.css`生成`mtl.min.css`文件
+3. 运行Npm命令 `node-sass src/main.scss --output-style compressed dist/mtl.min.css` 生成 `mtl.min.css` 文件
 
 PS: class名说明请看 `src/*.scss` 文件.
 

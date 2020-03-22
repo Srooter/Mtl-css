@@ -1,21 +1,85 @@
-// common
-@media only screen and (min-width: 576px) {
+@import "../utils/variables.scss";
+
+@mixin responsiveMedia() {
+  @media only screen and (min-width: 576px) {
+  }
+
+  @media only screen and (min-width: 768px) {
+  }
+
+  @media only screen and (min-width: 992px) {
+  }
+
+  @media only screen and (min-width: 1200px) {
+  }
+  // iPhone 5, 5S, 5C, 5SE, 6, 7, 8
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  }
+  // iPhone 6+, 7+, 8+
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  }
+  // iPhone X
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  }
 }
 
-@media only screen and (min-width: 768px) {
+@mixin pxToRemFontSize($device-type, $min, $max) {
+  @if $device-type == "iPhone" {
+    // iPhone 5, 5S, 5C, 5SE, 6, 7, 8
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+      html {
+        font-size: (375/ ($rem-ui-width/100)) + px;
+      }
+    }
+    // iPhone 6+, 7+, 8+
+    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+      html {
+        font-size: (414/ ($rem-ui-width/100)) + px;
+      }
+    }
+    // iPhone X
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+      html {
+        font-size: (375/ ($rem-ui-width/100)) + px;
+      }
+    }
+  }
+  @if ($min!=null or $max!=null) {
+    @media only screen and (min-width: $min+px) and (max-width: $max+px) {
+      html {
+        font-size: ($min/($rem-ui-width/100)) + px;
+      }
+    }
+  } @else if $min!=null {
+    @media only screen and (min-width: $min+px) {
+      html {
+        font-size: ($min/($rem-ui-width/100)) + px;
+      }
+    }
+  }
+}
+/**
+   * @description pxToRem
+   * @author Sroot
+   * @version 0.0.1
+   * @param {Number} $px px unit。
+   * 
+   * @returns {String} rem unit。
+   *
+   * @example
+   *   div{
+   *     width:pxToRem(100); => width: 1rem;
+   *   }
+   */
+@function pxToRem($px) {
+  @return ($px / 100) + rem;
 }
 
-@media only screen and (min-width: 992px) {
+@if ($platform == "mobile" and $use-rem == true and $rem-ui-width) {
+  @include pxToRemFontSize("", 320, 375);
+  @include pxToRemFontSize("iPhone", null, null);
 }
 
-@media only screen and (min-width: 1200px) {
-}
-// iPhone 5, 5S, 5C and 5SE  
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-}
-// iPhone 6+, 7+ and 8+  
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-}
-// iPhone X 
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+@if ($platform== "response") {
+  @include responsiveMedia();
 }

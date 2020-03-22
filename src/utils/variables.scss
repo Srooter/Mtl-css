@@ -1,5 +1,11 @@
-// @param "pc","mobile"
+// @param {String} "pc","mobile"
 $platform: mobile;
+
+// @param {Boolean} "true","false"
+$use-rem: false;
+// @description Mobile design draft width size.
+// @param {Number} 750, 640, or other size.
+$rem-ui-width: 750;
 
 $red: #ff0000;
 $white: #ffffff;

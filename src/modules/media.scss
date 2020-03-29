@@ -23,43 +23,43 @@
   }
 }
 
-@mixin pxToRemFontSize($device-type, $min, $max) {
+@mixin px2RemFontSize($device-type, $min, $max) {
   @if $device-type == "iPhone" {
     // iPhone 5, 5S, 5C, 5SE, 6, 7, 8
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
       html {
-        font-size: (375/ ($rem-ui-width/100)) + px;
+        font-size: (375/ ($design-width/100)) + px;
       }
     }
     // iPhone 6+, 7+, 8+
     @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
       html {
-        font-size: (414/ ($rem-ui-width/100)) + px;
+        font-size: (414/ ($design-width/100)) + px;
       }
     }
     // iPhone X
     @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
       html {
-        font-size: (375/ ($rem-ui-width/100)) + px;
+        font-size: (375/ ($design-width/100)) + px;
       }
     }
   }
   @if ($min!=null or $max!=null) {
     @media only screen and (min-width: $min+px) and (max-width: $max+px) {
       html {
-        font-size: ($min/($rem-ui-width/100)) + px;
+        font-size: ($min/($design-width/100)) + px;
       }
     }
   } @else if $min!=null {
     @media only screen and (min-width: $min+px) {
       html {
-        font-size: ($min/($rem-ui-width/100)) + px;
+        font-size: ($min/($design-width/100)) + px;
       }
     }
   }
 }
 /**
-   * @description pxToRem
+   * @description px2Rem
    * @author Sroot
    * @version 0.0.1
    * @param {Number} $px px unit。
@@ -71,11 +71,28 @@
    *     width:pxToRem(100); => width: 1rem;
    *   }
    */
-@function pxToRem($px) {
+@function px2Rem($px) {
   @return ($px / 100) + rem;
 }
 
-@if ($platform == "mobile" and $use-rem == true and $rem-ui-width) {
+/**
+   * @description px2Vw
+   * @author Sroot
+   * @version 0.0.1
+   * @param {Number} $px px unit。
+   * 
+   * @returns {String} vm unit。
+   *
+   * @example
+   *   div{
+   *     width:px2vw(100); => width: 13.33333vw;
+   *   }
+   */
+@function px2Vw($px) {
+  @return ($px / $design-width) * 100vw;
+}
+
+@if ($platform == "mobile" and $use-rem == true and $design-width) {
   @include pxToRemFontSize("", 320, 375);
   @include pxToRemFontSize("iPhone", null, null);
 }

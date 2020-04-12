@@ -11,6 +11,8 @@
   color: $text-font;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ::-webkit-file-upload-button {
   -webkit-appearance: button;

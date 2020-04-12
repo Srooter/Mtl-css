@@ -1,4 +1,4 @@
-@import './mixins.scss';
+@import "./mixins.scss";
 
 // boder
 .boder-rounded {
@@ -78,53 +78,79 @@
 }
 
 // img fill
-.object-cover{
-	object-fit: cover;
+.object-cover {
+  object-fit: cover;
 }
-.object-contain{
-	object-fit: contain;
+.object-contain {
+  object-fit: contain;
 }
-.object-fill{
-	object-fit: fill;
+.object-fill {
+  object-fit: fill;
 }
-.object-scale-down{
-	object-fit: scale-down;
+.object-scale-down {
+  object-fit: scale-down;
 }
 
 // triangle
-.triangle{
-  width:0;
-  height:0;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
-  border-bottom:20px solid black;
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid black;
 }
 
-// transition glint
-.transition-glint{
-  -webkit-transform-style: preserve-3d;
+// css hardware accelerated
+.cube-3d {
+  -webkit-transform: translate3d(250px,250px,250px)
+  rotate3d(250px,250px,250px,-120deg)
+  scale3d(0.5, 0.5, 0.5);
+}
+.cube {
+  @if $platform == mobile {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* Other transform properties here */
+  } @else {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+.cube-glint {
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
 }
 
 // mobile 1px bug
 .row-1px {
   @if $platform == mobile {
     position: relative;
-    &:after{
+    &:after {
       content: "";
       position: absolute;
       left: 0;
       top: 0;
       width: 200%;
-      border-bottom:1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
       color: #000;
       height: 200%;
       -webkit-transform-origin: left top;
       transform-origin: left top;
       -webkit-transform: scale(0.5);
       transform: scale(0.5);
-      pointer-events: none; 
+      pointer-events: none;
       box-sizing: border-box;
     }
   }
@@ -140,7 +166,7 @@
   background-color: #ededed;
 }
 .skeletons:empty::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   width: 100%;
@@ -165,12 +191,12 @@
 }
 
 // grey and white background
-html { 
+html {
   filter: gray !important;
-	filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-	filter: grayscale(100%);
-	-webkit-filter: grayscale(100%);
-	-moz-filter: grayscale(100%);
-	-ms-filter: grayscale(100%);
-	-o-filter: grayscale(100%); 
-} 
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}

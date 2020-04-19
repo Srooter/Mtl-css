@@ -102,9 +102,7 @@
 
 // css hardware accelerated
 .cube-3d {
-  -webkit-transform: translate3d(250px,250px,250px)
-  rotate3d(250px,250px,250px,-120deg)
-  scale3d(0.5, 0.5, 0.5);
+  -webkit-transform: translate3d(250px, 250px, 250px) rotate3d(250px, 250px, 250px, -120deg) scale3d(0.5, 0.5, 0.5);
 }
 .cube {
   @if $platform == mobile {
@@ -188,6 +186,28 @@
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
   }
+}
+
+// image broken
+img {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  line-height: normal;
+  background: #a8a8a8;
+  color: white;
+}
+
+img::before {
+  content: "Image is broken: ";
+  display: inline-block;
+}
+
+img::after {
+  content: attr(src);
+  display: inline-block;
 }
 
 // grey and white background

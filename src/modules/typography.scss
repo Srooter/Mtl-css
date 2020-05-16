@@ -12,13 +12,13 @@
 .underline {
   text-decoration: underline;
 }
-.align-left {
+.text-left {
   text-align: left;
 }
-.align-right {
+.text-right {
   text-align: right;
 }
-.align-center {
+.text-center {
   text-align: center;
 }
 .text-justify {
@@ -27,7 +27,20 @@
   -moz-text-align-last: justify;
   -webkit-text-align-last: justify;
 }
-
+// apply to Chinese vertical writing.
+.text-vertical{
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+}
+// apply to Chinese first letter.
+.text-begin:first-letter{
+  font-size: 4em;
+  float: left;
+  text-indent: 0;
+  padding: 2px;
+  line-height: 1em;
+}
 .text-nowrap {
   white-space: nowrap;
 }
